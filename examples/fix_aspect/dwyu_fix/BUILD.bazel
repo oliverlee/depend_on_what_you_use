@@ -1,0 +1,9 @@
+load("@rules_python//python:py_binary.bzl", "py_binary")
+
+py_binary(
+    name = "fix_deps",
+    srcs = ["fix_deps.py"],
+    data = ["@buildozer_binary//:buildozer.exe"],
+    visibility = ["//:__pkg__"],
+    deps = ["@rules_python//python/runfiles"],
+)
