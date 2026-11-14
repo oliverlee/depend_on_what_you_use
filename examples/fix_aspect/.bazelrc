@@ -1,0 +1,11 @@
+startup --max_idle_secs=10
+
+common --experimental_convenience_symlinks=ignore
+
+build:dwyu --aspects=//:aspect.bzl%dwyu
+build:dwyu --output_groups=dwyu
+build:dwyu --show_result=100
+
+build:dwyu-fix --aspects=//:aspect.bzl%dwyu_fix
+build:dwyu-fix --output_groups=dwyu_fix
+build:dwyu-fix --use_action_cache=false
